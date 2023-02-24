@@ -1,0 +1,59 @@
+<html>
+    <body>
+        <div class="topnav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <img src="static/image/removedbg.png" alt="" width="150" height="100">
+                 
+                 <h1><b>Leaf Assist</b></h1>
+                 
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              
+            </div>
+        </nav>
+        </div>
+  
+        <label for="my-dropdown">Select a leaf name:</label>
+        <select id="my-dropdown" onchange="printText()">
+        <option value="Select">Select a leaf</option>
+          <option value="Tomato Bacterial spot">Tomato Bacterial spot</option>
+          <option value="Tomato Early Blight">Tomato Early Blight</option>
+          <option value="Tomato Late Blight">Tomato Late Blight</option>
+          <option value="Tomato Leaf Mold">Tomato Leaf Mold</option>
+          <option value="Tomato Septoria Leaf Spot">Tomato Septoria Leaf Spot</option>
+          <option value="Tomato Spider mites Two SPotted Mite">Tomato Spider mites Two SPotted Mite</option>
+          <option value="Tomato Target Spot">Tomato Target Spot</option>
+          <option value="Tomato Mosaic Spot">Tomato Mosaic Virus</option>
+          <option value="Tomato Yellow Leaf Curl Virus">Tomato Yellow Leaf Curl Virus </option>
+        </select>
+        <p id="my-text"></p>
+        
+        <script>
+          function printText() {
+            var dropdown = document.getElementById("my-dropdown");
+            var selectedValue = dropdown.options[dropdown.selectedIndex].value;
+            if(selectedValue=="Tomato Bacterial spot")
+            {
+                var text= "Using pathogen-free seed and disease-free transplants, when possible, is the best way to avoid bacterial spot on tomato. Avoiding sprinkler irrigation and cull piles near greenhouse or field operations, and rotating with a nonhost crop also helps control the disease.";
+            
+            }
+            if(selectedValue=="Tomato Early Blight")
+            {
+                var text1="1. Plant resistant varieties: Some tomato varieties are resistant to early blight, so choosing these varieties can help prevent the disease from taking hold in your garden.";
+                var text2="2. Maintain good plant hygiene: Early blight spores can overwinter in plant debris, so it's important to remove and destroy any affected plant material at the end of the growing season. This can help prevent the disease from spreading to new plants in the next growing season.";
+                var text3="3. Provide adequate air circulation: Good air circulation can help prevent the growth and spread of early blight. Make sure your tomato plants are not overcrowded and have enough space to grow and breathe.";
+                var text=text1+"<br>"+text2+"<br>"+text3;
+            }
+            if(selectedValue=="Tomato Late Blight")
+            {
+                var text1="1.Choose resistant varieties: There are tomato varieties that are resistant to late blight, and planting these varieties can help prevent the disease from taking hold in your garden.";
+                var text2="2.Maintain good plant hygiene: Late blight can overwinter in infected plant debris, so it's important to remove and destroy any affected plant material at the end of the growing season.";
+                var text3="3.Monitor the weather: Late blight thrives in cool, wet weather conditions, so monitor the weather and be prepared to take action if conditions are favorable for the disease.";
+                var text=text1+"<br>"+text2+"<br>"+text3;
+            }
+            document.getElementById("my-text").innerHTML = "<p>"+text+"</p>";
+          }
+        </script>
+        
+        </body>
+</html>
