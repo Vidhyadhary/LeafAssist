@@ -1,3 +1,6 @@
 {
+    "python.pythonPath":"C:\\Users\\VIDYADHARY\\anaconda3\\envs\\env_pytorch\\python.exe",
+
+    "python.terminal.activateEnvironment": true,
     "git.ignoreLimitWarning": true
 }

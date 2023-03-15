@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Leaf Assist</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Playfair Display', serif;
+    display: grid;
+    background-image:url("static/image/background1.jpg");
+    align-content: center;
+    min-height: 100vh;
+}
+section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 90vh;
+    width: 75vw;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 12px
+}
+.image{
+    background-color: #12192c;
+    display: flex;
+    border-radius: 12px 0 0 12px;
+    width:350px;
+}
+.image img{
+height:70vh;
+text-align:left;
+}
+.content{
+    background-color:#12192c;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0  12px 12px 0;
+    color: #fff;
+    width:700px; 
+    justify-content: center;   
+}
+.content h2{
+    text-transform: uppercase;
+    font-size: 36px;
+    letter-spacing: 6px;
+    opacity: 0.9;
+}
+.content span{
+    height: 0.5px;
+    width: 80px;
+    background: #777;
+    margin: 30px 0;
+}
+.content p{
+    padding-bottom: 15px;
+    font-weight: 300;
+    opacity: 0.7;
+    width: 60%;
+    margin: 0 auto;
+    line-height: 1.7;
+    color:#ffffff;
+    text-align:left;
+}
+.content select{
+    text-align:center;
+    justify-content: center;
+    width:200px;
+}
+/*****************/
+@media(max-width: 900px){
+    section{
+        grid-template-columns: 1fr;
+        width: 100%;
+        border-radius: none;
+    }
+    .image{
+        height: 100vh;
+        border-radius: none;
+    }
+    .content{
+        height: 100vh;
+        border-radius: none;
+    }
+    .content h2{
+        font-size: 20px;
+        margin-top: 50px;
+    }
+    .content span{
+        margin: 20px 0;
+    }
+    .content p{
+        font-size: 14px;
+    }
+}
+    </style>
+    <body>
+        <section>
+            <div class = "image">
+               <img src="static/image/farmer1.png">
+            </div>
+
+            <div class = "content">
+                
+                <label for="my-dropdown">Select a leaf name:</label>
+                <select id="my-dropdown" onchange="printText()" >
+                <option value="Select">Select a leaf</option>
+                  <option value="Tomato Bacterial spot">Tomato Bacterial spot</option>
+                  <option value="Tomato Early Blight">Tomato Early Blight</option>
+                  <option value="Tomato Late Blight">Tomato Late Blight</option>
+                  <option value="Tomato Leaf Mold">Tomato Leaf Mold</option>
+                  <option value="Tomato Septoria Leaf Spot">Tomato Septoria Leaf Spot</option>
+                  <option value="Tomato Spider mites Two SPotted Mite">Tomato Spider mites Two SPotted Mite</option>
+                  <option value="Tomato Target Spot">Tomato Target Spot</option>
+                  <option value="Tomato Mosaic Spot">Tomato Mosaic Virus</option>
+                  <option value="Tomato Yellow Leaf Curl Virus">Tomato Yellow Leaf Curl Virus </option>
+                </select>
+                <br>
+                <p id="my-text"></p>
+                
+            </div>
+        </section><br><br>
+       
+    </body>
+    <script>
+        function printText() {
+                  var dropdown = document.getElementById("my-dropdown");
+                  var selectedValue = dropdown.options[dropdown.selectedIndex].value;
+                  if(selectedValue=="Tomato Bacterial spot")
+                  {
+                      var text= "1. Using pathogen-free seed and disease-free transplants, when possible, is the best way to avoid bacterial spot on tomato. Avoiding sprinkler irrigation and cull piles near greenhouse or field operations, and rotating with a nonhost crop also helps control the disease.";
+                  
+                  }
+                  if(selectedValue=="Tomato Early Blight")
+                  {
+                      var text1="1. Plant resistant varieties: Some tomato varieties are resistant to early blight, so choosing these varieties can help prevent the disease from taking hold in your garden.";
+                      var text2="2. Maintain good plant hygiene: Early blight spores can overwinter in plant debris, so it's important to remove and destroy any affected plant material at the end of the growing season. This can help prevent the disease from spreading to new plants in the next growing season.";
+                      var text3="3. Provide adequate air circulation: Good air circulation can help prevent the growth and spread of early blight. Make sure your tomato plants are not overcrowded and have enough space to grow and breathe.";
+                      var text=text1+"<br>"+text2+"<br>"+text3;
+                  }
+                  if(selectedValue=="Tomato Late Blight")
+                  {
+                      var text1="1.Choose resistant varieties: There are tomato varieties that are resistant to late blight, and planting these varieties can help prevent the disease from taking hold in your garden.";
+                      var text2="2.Maintain good plant hygiene: Late blight can overwinter in infected plant debris, so it's important to remove and destroy any affected plant material at the end of the growing season.";
+                      var text3="3.Monitor the weather: Late blight thrives in cool, wet weather conditions, so monitor the weather and be prepared to take action if conditions are favorable for the disease.";
+                      var text=text1+"<br>"+text2+"<br>"+text3;
+                  }if(selectedValue=="Tomato Leaf Mold")
+                  {
+                    var text1="1.Proper air circulation is essential for preventing leaf mold. Make sure that there is enough space between tomato plants and that they are not overcrowded. Also, avoid planting tomatoes in areas with poor air movement.";
+                    var text2="2.Water at the base of the plant: When watering your tomato plants, try to avoid getting water on the leaves. Water at the base of the plant and use a soaker hose or drip irrigation system to avoid wetting the leaves.";
+                    var text3="3.Mulch: Mulching around the base of the tomato plants can help prevent the spread of fungal spores.";
+                    var text=text1+"<br>"+text2+"<br>"+text3;
+                  }
+                  if(selectedValue=="Tomato Septoria Leaf Spot")
+                  {
+                    var text1="1.Proper plant spacing: Provide enough space between tomato plants to increase air circulation and reduce humidity around the plant. This can help prevent the spread of the disease."+"<br>"+"2.Crop rotation: Avoid planting tomatoes in the same location for multiple years in a row. Rotate the crop with plants that are not in the tomato family."+"<br>"+"3.Remove affected plant parts: Regularly remove the infected leaves and stems from the plant, and dispose of them in the trash. This can help prevent the spread of the disease.";
+                    var text2="<br>"+"4.Water at the base of the plant: Avoid watering the leaves of the plant, as this can increase the humidity and promote the growth of fungal spores. Water the base of the plant instead."+"<br>"+"5.Apply fungicides: Apply a fungicide to the tomato plant at the first sign of Septoria Leaf Spot. Fungicides containing copper, sulfur, or chlorothalonil are effective against this disease. Be sure to follow the instructions on the fungicide label.";
+                    var text=text1+text2;
+                  }
+                  if(selectedValue=="Tomato Spider mites Two SPotted Mite")
+                  {
+                    var text1=""
+                  }
+                  document.getElementById("my-text").innerHTML = "<p>"+text+"</p>";
+                }
+      </script>
+</html>

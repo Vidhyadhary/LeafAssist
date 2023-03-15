@@ -2,6 +2,10 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
 <style>
 * {
   box-sizing: border-box;
@@ -24,12 +28,8 @@
   display: flex;
   align-items: center;
   background-image: url('static/image/background1.jpg');
-			background-repeat: no-repeat;
+   background-repeat: no-repeat;
 			background-size: cover;
-}
-
-.header img {
-  margin-left: 240px;
 }
   form{border: 3px solid #f1f1f1;}
   input[type=text], input[type=number],input[type=text] {
@@ -82,38 +82,37 @@ span.age {
 </head>
 
 <body style="font-family:Verdana;color:#aaaaaa;">
-<div class= "header" style="background-color:#e5e5e5;padding:15px;text-align:center;">
-  <img src="static/image/logo.png" alt="Image description" style="width: 150px;height:auto">
-  <h1 style="font-size: 50px;font-family: Open San;font-stretch: narrower;color:black;text-align: center;">WELCOME TO LEAF ASSIST</h1>
+<div class= "header" style="background-color:#e5e5e5;padding:15px;text-align:center;;">
+  <h1 style="font-size: 50px;font-family: Open San;font-stretch: narrower;color:black;text-align: center;font-size:1cm;">You can Upload your Picture in this platform and we will let you know if your plant is Healthy or Not</h1>
 </div>
 
 
   <div class="main"> 
-    <h2 style="color:black;text-align:center;">Login Form</h2>
+    <h2 style="color:black;text-align: center;">Upload Your Image Here</h2>
 
 <form action="https://script.google.com/macros/s/AKfycbyJ3E7aLxMHY3fjuUCeXvZb9NTREorTvPT_8Z_oH1_BPRql2CCe8OEwSVVdEvHRFRkVEQ/exec" method="post">
   
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="UserName" id="UserName" required>
-
-    <label for="age"><b>Age</b></label>
-    <input type="number" placeholder="Enter Your Age" name="Age" id="Age" required>
-    <label for="place"><b>Place</b></label>
-    <input type="text" placeholder="Enter Place you belong from" name="Place" id="Place" required>
-    <button type="submit" id="submitBtn" style="margin-left: 5cm;width:5cm;" onclick="click()">Submit</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"style="color:black;"> Remember me
-    </label>
-  </div>
-</form>
-
-
-  </div>
-
+   <form action="#" method="POST" enctype="multipart/form-data">
+      <label for="upload"> Upload to predict </label>
+      <input type="file" name="image" required="true">
+      <input type="submit" value="Upload and Diagnose">
+  </form>
+  <br>
+  {% if fileupload %}  
   <div class="right" style="color: black;background-image:url(static/image/background1.jpg);">
-    <img src="static/image/farmer3.png" style="margin-top:0cm;">
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+       <h5 align="justify">{{a}}</h5>
+        <br>
+         <br>
+        <h5 align="justify">{{b}}</h5>
 </div>
+{% endif %}
+
 </div>
 </body>
 <script>

@@ -20,5 +20,5 @@ def base():
         plant_name, disease_name=get_pred_label(load_dict,index)
         a='Predicted plant name: {} '.format(plant_name) 
         b='Predicted disease: {} '.format(disease_name)
-        return render_template('next_page.html',fileupload=True,img_name=filename,a=a,b=b)
-    return render_template('next_page.html',fileupload=False,img_name="leaf-logos.png")
+        return render_template('Diagnose.html',fileupload=True,img_name=filename,a=a,b=b)
+    return render_template('Diagnose.html',fileupload=False,img_name="leaf-logos.png")
