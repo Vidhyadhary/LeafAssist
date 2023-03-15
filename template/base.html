@@ -91,7 +91,7 @@ span.age {
   <div class="main"> 
     <h2 style="color:black;text-align:center;">Login Form</h2>
 
-<form action="https://script.google.com/macros/s/AKfycbyJ3E7aLxMHY3fjuUCeXvZb9NTREorTvPT_8Z_oH1_BPRql2CCe8OEwSVVdEvHRFRkVEQ/exec" method="post">
+<form id="myForm" method="post">
   
   <div class="container">
     <label for="uname"><b>Username</b></label>
@@ -107,6 +107,22 @@ span.age {
     </label>
   </div>
 </form>
+<script>
+  const form = document.getElementById("myForm");
+ // Add event listener for form submission
+ form.addEventListener("submit", function(event) {
+   // Prevent the form from submitting normally
+   event.preventDefault();
+   
+   // Get the form data
+   const formData = new FormData(form);
+   
+   // Do any necessary processing of the form data here
+   
+   // Redirect to the new page
+   window.location.href = "Main_Page.html";
+ });
+</script>
 
 
   </div>
@@ -116,8 +132,5 @@ span.age {
 </div>
 </div>
 </body>
-<script>
-  
-</script>
 </html>
 
