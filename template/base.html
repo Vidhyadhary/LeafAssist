@@ -91,16 +91,16 @@ span.age {
   <div class="main"> 
     <h2 style="color:black;text-align:center;">Login Form</h2>
 
-<form id="myForm" method="post">
+<form id="myForm" method="post" action="https://sheetdb.io/api/v1/659xtl75bsgdw">
   
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="UserName" id="UserName" required>
+    <input type="text" placeholder="Enter Username" name="data[UserName]" id="UserName" required>
 
     <label for="age"><b>Age</b></label>
-    <input type="number" placeholder="Enter Your Age" name="Age" id="Age" required>
+    <input type="number" placeholder="Enter Your Age" name="data[Age]" id="Age" required>
     <label for="place"><b>Place</b></label>
-    <input type="text" placeholder="Enter Place you belong from" name="Place" id="Place" required>
+    <input type="text" placeholder="Enter Place you belong from" name="data[Place]" id="Place" required>
     <button type="submit" id="submitBtn" style="margin-left: 5cm;width:5cm;" onclick="click()">Submit</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"style="color:black;"> Remember me
@@ -108,20 +108,19 @@ span.age {
   </div>
 </form>
 <script>
-  const form = document.getElementById("myForm");
- // Add event listener for form submission
- form.addEventListener("submit", function(event) {
-   // Prevent the form from submitting normally
-   event.preventDefault();
-   
-   // Get the form data
-   const formData = new FormData(form);
-   
-   // Do any necessary processing of the form data here
-   
-   // Redirect to the new page
-   window.location.href = "Main_Page.html";
- });
+  var form=document.getElementById('myForm');//vndas0824@gmail.com
+  form.addEventListener("submit",e=>{
+    e.preventDefault();
+    fetch(form.action,{
+      method:"POST",
+      body:new FormData(document.getElementById("myForm")),
+    }).then(
+      response=> response.json()
+    ).then((html)=>{
+      window.open('Main_Page.html');
+    });
+  });
+  
 </script>
 
 
